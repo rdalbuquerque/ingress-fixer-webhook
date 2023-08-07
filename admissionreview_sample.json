@@ -1,0 +1,41 @@
+{
+  "kind": "AdmissionReview",
+  "apiVersion": "admission.k8s.io/v1",
+  "request": {
+    "uid": "some-uid",
+    "kind": {
+      "group": "networking.k8s.io",
+      "version": "v1",
+      "kind": "Ingress"
+    },
+    "resource": {
+      "group": "networking.k8s.io",
+      "version": "v1",
+      "resource": "ingresses"
+    },
+    "object": {
+      "apiVersion": "networking.k8s.io/v1",
+      "kind": "Ingress",
+      "metadata": {
+        "annotations": {
+            "mutate/service-name": "original-service",
+            "mutate/service-port": "8080"
+        },
+        "name": "sample-ingress"
+      },
+      "spec": {
+        "rules": [
+          {
+            "http": {
+              "paths": [
+                {
+                  "backend": {}
+                  }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}
