@@ -2,14 +2,14 @@ package main
 
 import (
 	"encoding/json"
-	"io/ioutil"
+	"os"
 	"testing"
 
 	v1 "k8s.io/api/admission/v1"
 )
 
 func TestMutateIngress(t *testing.T) {
-	data, err := ioutil.ReadFile("admissionreview_sample.json")
+	data, err := os.ReadFile("admissionreview_sample.json")
 	if err != nil {
 		t.Fatalf("Failed to read sample data: %v", err)
 	}
