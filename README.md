@@ -48,4 +48,4 @@ The webhook server uses TLS for secure communication. The paths to the TLS certi
 
 ## Conclusion
 
-One of the key takeaways from this project is the realization that, for the request to successfully reach the mutating webhook service, a valid API version and object compatible with the Kubernetes version in use are essential. This realization led us to use annotations as a solution, minimizing the changes users would need to make to their Ingress objects. This approach helps users adapt their Ingress objects with minimal effort, making the transition smoother.
+One of the key takeaways from this project is the realization that, for the request to successfully reach the mutating webhook service, a valid API version and object compatible with the Kubernetes version in use are required. This realization led me to use annotations as a solution, minimizing the changes users would need to make to their Ingress objects. This approach helps users adapt their Ingress objects with minimal effort, making the transition smoother.
